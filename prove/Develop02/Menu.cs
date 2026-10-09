@@ -5,9 +5,10 @@ public class Menu
     private int _userSelection;
     private string _prompt;
     private bool _end = false;
-    Journal journal = new Journal();
     private string _liveJournal;
     List<string> _loadedJournal;
+    Journal journal = new Journal();
+    
     
 
     public void Run()
@@ -52,7 +53,7 @@ public class Menu
         PromptGenerator prompt = new PromptGenerator();
         Console.Clear();
         _prompt = prompt.GetPrompt();
-        Console.Write(prompt.GetPrompt());
+        Console.Write(_prompt);
         string entry = Console.ReadLine();
         journal.AddEntry(_prompt, entry);
         return;
@@ -72,7 +73,7 @@ public class Menu
         Console.WriteLine("Where would you like to save the file? ");
         string fileLocation = Console.ReadLine();
         JournalFile file = new JournalFile();
-        file.fileSave(fileLocation, journalToSave);
+        file.FileSave(fileLocation, journalToSave);
         return;
     }
 
@@ -81,7 +82,7 @@ public class Menu
         JournalFile file = new JournalFile();
         Console.WriteLine("Where would you like to get the file from? ");
         string fileLocation = Console.ReadLine();
-        _loadedJournal = file.fileLoad(fileLocation);
+        _loadedJournal = file.FileLoad(fileLocation);
         foreach (string entry in _loadedJournal)
         {
             Console.WriteLine(entry);
