@@ -2,6 +2,7 @@
 
 public class Search
 {
+    
     private string _liveJournal;
     
     public string DisplaySearchedEntries(List<string> journal, string searchWord)
