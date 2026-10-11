@@ -30,7 +30,7 @@ public class Journal
         foreach (string entry in _entries)
         {
             string[] parts = entry.Split('\n');
-            string _oneEntry = _entry.toFileLine(parts[0], parts[1], parts[2]);
+            string _oneEntry = _entry.ToFileLine(parts[0], parts[1], parts[2]);
             fileText += _oneEntry + Environment.NewLine;
         }
 

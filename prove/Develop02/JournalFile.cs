@@ -13,8 +13,16 @@ public class JournalFile
 
     public List<string> FileLoad(string fileLocation)
     {
-        string journal = File.ReadAllText(fileLocation);
-        // _entries.Clear();
+        string journal;
+        try
+        {
+            journal = File.ReadAllText(fileLocation);
+        }
+        catch (IOException)
+        {
+            Console.WriteLine("The file could not be opened.");
+            return new List<string>();
+        }
         
         string[] lines = journal.Split(
             Environment.NewLine,

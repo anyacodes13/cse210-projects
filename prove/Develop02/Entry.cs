@@ -13,7 +13,7 @@ public class Entry
         
     }
     
-    public string toFileLine(string date, string prompt, string userEntry)
+    public string ToFileLine(string date, string prompt, string userEntry)
     {
         return $"{date}|{prompt}|{userEntry}";
     }
