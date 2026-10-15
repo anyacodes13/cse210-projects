@@ -96,7 +96,8 @@ public class Menu
         Console.Write("What would you like to search for? ");
         string searchWord = Console.ReadLine();
         Search search = new Search();
-        Console.WriteLine(search.DisplaySearchedEntries(journal.GetListOfEntries(_loadedJournal), searchWord));
+        // Console.WriteLine(search.DisplaySearchedEntries(journal.GetListOfEntries(_loadedJournal), searchWord));
+        Console.WriteLine(journal.Search(searchWord));
     }
     public void Exit()
     {

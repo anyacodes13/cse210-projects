@@ -4,48 +4,60 @@ namespace Develop02;
 
 public class Journal
 {
-    private List<string> _entries = new List<string>();
+    private List<Entry> _entries = new List<Entry>();
     private string _liveJournal;
-    Entry _entry = new Entry();
 
     public void AddEntry(string prompt, string userEntry)
     {
-        _entries.Add(_entry.CreateEntry(prompt, userEntry));
+        _entries.Add(new Entry(prompt, userEntry));
         return;
     }
 
     public string DisplayEntries()
     {
-        foreach (string entry in _entries)
+        var response = "";
+        foreach (Entry entry in _entries)
         {
-            _liveJournal += entry + Environment.NewLine;
+            response += entry.ToString() + Environment.NewLine;
         }
 
-        return _liveJournal;
+        return response;
     }
 
     public string CompileBook()
     {
         string fileText = "";
-        foreach (string entry in _entries)
+        foreach (Entry entry in _entries)
         {
-            string[] parts = entry.Split('\n');
-            string _oneEntry = _entry.ToFileLine(parts[0], parts[1], parts[2]);
+            // string[] parts = entry.Split('\n');
+            string _oneEntry = entry.ToFileLine("", "", "");
             fileText += _oneEntry + Environment.NewLine;
         }
 
         return fileText;
     }
 
-    public List<string> GetListOfEntries(List<string> list)
+    // public List<string> GetListOfEntries(List<string> list)
+    // {
+    //     if (list == null || list.Count == 0)
+    //     {
+    //         return _entries;
+    //     }
+    //     else
+    //     {
+    //         return  list;
+    //     }
+    // }
+
+    public string Search(string searchWord)
     {
-        if (list == null || list.Count == 0)
+        string response = "";
+        foreach (var entry in _entries)
         {
-            return _entries;
+            if (entry.ContainsString(searchWord))
+                response += entry + Environment.NewLine;
         }
-        else
-        {
-            return  list;
-        }
+
+        return response;
     }
 }
