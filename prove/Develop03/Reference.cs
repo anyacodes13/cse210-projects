@@ -11,7 +11,7 @@
  *    program from selecting the same hidden word repeatedly.
  */
 
-namespace Develop03;
+namespace Develop03; 
 
 public class Reference
 {

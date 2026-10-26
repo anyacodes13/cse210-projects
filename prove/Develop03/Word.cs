@@ -1,4 +1,4 @@
-﻿namespace Develop03;
+﻿namespace Develop03; 
 
 public class Word
 {
