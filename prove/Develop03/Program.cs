@@ -1,3 +1,16 @@
+/*
+ * Stretch challenges:
+ *
+ * 1. I created a library containing three different scriptures so the user
+ *    can choose which scripture to practice.
+ *
+ * 2. I added an option for the user to enter a custom scripture, including
+ *    the book, chapter, verse or verse range, and scripture text.
+ *
+ * 3. I completed the stretch challenge by making sure the program only
+ *    chooses words that have not already been hidden. This prevents the
+ *    program from selecting the same hidden word repeatedly.
+ */
 using System; 
 using Develop03;
 
